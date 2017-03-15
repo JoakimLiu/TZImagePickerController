@@ -141,7 +141,9 @@
     
     _numberImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamedFromMyBundle:_tzImagePickerVc.photoNumberIconImageName]];
     _numberImageView.backgroundColor = [UIColor clearColor];
-    _numberImageView.frame = CGRectMake(self.view.tz_width - 56 - 28, 7, 30, 30);
+//    _numberImageView.frame = CGRectMake(self.view.tz_width - 56 - 28, 7, 30, 30);
+    // change by lyf
+    _numberImageView.frame = CGRectMake(self.view.tz_width - 56 - 28, 7, 25, 25);
     _numberImageView.hidden = _tzImagePickerVc.selectedModels.count <= 0;
     
     _numberLabel = [[UILabel alloc] init];
@@ -159,6 +161,8 @@
     [_toolBar addSubview:_numberImageView];
     [_toolBar addSubview:_numberLabel];
     [self.view addSubview:_toolBar];
+    // add by lyf
+    _doneButton.tz_centerY = _originalPhotoButton.tz_centerY = _numberImageView.tz_centerY = _numberLabel.tz_centerY = _toolBar.tz_height/2;
 }
 
 - (void)configCollectionView {

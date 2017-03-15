@@ -235,7 +235,9 @@ static CGSize AssetGridThumbnailSize;
     _doneButton.enabled = tzImagePickerVc.selectedModels.count || tzImagePickerVc.alwaysEnableDoneBtn;
     
     _numberImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamedFromMyBundle:tzImagePickerVc.photoNumberIconImageName]];
-    _numberImageView.frame = CGRectMake(self.view.tz_width - 56 - 28, 10, 30, 30);
+//    _numberImageView.frame = CGRectMake(self.view.tz_width - 56 - 28, 10, 30, 30);
+    // change by lyf
+    _numberImageView.frame = CGRectMake(self.view.tz_width - 56 - 28, 10, 25, 25);
     _numberImageView.hidden = tzImagePickerVc.selectedModels.count <= 0;
     _numberImageView.backgroundColor = [UIColor clearColor];
     
@@ -261,6 +263,9 @@ static CGSize AssetGridThumbnailSize;
     [self.view addSubview:bottomToolBar];
     [self.view addSubview:_originalPhotoButton];
     [_originalPhotoButton addSubview:_originalPhotoLabel];
+    
+    // add by lyf
+    _previewButton.tz_centerY = _doneButton.tz_centerY = _numberImageView.tz_centerY = _numberLabel.tz_centerY = bottomToolBar.tz_height/2;
 }
 
 #pragma mark - Click Event
